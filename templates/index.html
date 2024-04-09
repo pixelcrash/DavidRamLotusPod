@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>David Ram / Lotus Pod</title>
+    <script src="{{ url_for('static', filename='jquery.js') }}"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+    
+</head>
+<body>
+    <table>
+
+        <tr>
+            <td><h1>David Ram</h1></td>
+        </tr>
+
+        <tr>
+            <td><h2>Programms</h2></td>
+        </tr>
+
+        <tr>
+            <td>
+                <button class="show" data-task="rainbow">Rainbow</button>
+                <button class="show" data-task="show">Show</button>
+                <button class="show" data-task="test">Test</button>
+                <button class="show" data-task="test">Test</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><h2>Full Color</h2></td>
+        </tr>
+
+        <tr>
+            <td>
+                <button class="show" data-task="allred">RED</button>
+                <button class="show" data-task="allwhite">WHITE</button>
+                <button class="show" data-task="allgreen">GREEN</button>
+                <button class="show" data-task="test">Test</button>
+            </td>
+        </tr>
+
+         <tr>
+            <td>
+                <button class="show" data-task="readimage">Image Tester</button>
+            </td>
+        </tr>
+
+      <tr>
+            <td>
+                <button class="show" data-task="update">GIT UPDATE</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td><h2>Full Color</h2></td>
+        </tr>
+
+        
+
+    </table>
+    
+</body>
+
+
+<script>
+
+    $(document).ready(function(){
+
+        $(".show").click(function(){
+            let task = $(this).data('task');
+            console.log(task);
+            $.post("/task/"+task, function(data, status){
+            });
+        });
+
+    });
+</script>
+
+
+</html>
