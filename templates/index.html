@@ -72,6 +72,7 @@
         });
 
         $(".update").click(function(){
+            let task = $(this).data('task');
             console.log(task);
             $.post("/update", function(data, status){
             });
