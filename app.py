@@ -13,7 +13,7 @@ def index():
 
 @app.route('/update', methods=['POST'])  # Use POST for security reasons
 def update_application():
-    result = subprocess.run(['./update_script.sh'], capture_output=True, text=True)
+    result = subprocess.run(['sudo ./update_script.sh'], capture_output=True, text=True)
     if result.returncode == 0:
         return {"success": True, "message": "Update initiated"}, 202
     else:
