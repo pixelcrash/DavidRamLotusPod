@@ -2,6 +2,8 @@
 
 # Use curl to check for internet connectivity
 
+sudo pkill -f "python3 app.py"
+
 if curl -s --head http://www.google.com/ &> /dev/null; then
   echo "Internet connection detected."
   sudo rm -rf /home/pi/DavidRamLotusPod/*
