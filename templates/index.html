@@ -47,7 +47,7 @@
 
          <tr>
             <td>
-                <button class="show" data-task="update">GIT UPDATE</button>
+                <button class="update" data-task="update">GIT UPDATE</button>
             </td>
         </tr>
 
@@ -68,6 +68,12 @@
             let task = $(this).data('task');
             console.log(task);
             $.post("/task/"+task, function(data, status){
+            });
+        });
+
+        $(".update").click(function(){
+            console.log(task);
+            $.post("/update", function(data, status){
             });
         });
 
